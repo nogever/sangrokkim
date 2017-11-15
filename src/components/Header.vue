@@ -30,6 +30,8 @@ export default {
 header {
   position: fixed;
   padding: 12px;
+  width: 100%;
+  border-bottom: 6px solid white;
   svg {
     width: 60px;
     height: auto;
