@@ -11,7 +11,7 @@
 import RHeader from './components/Header'
 
 export default {
-  name: 'app',
+  name: 'sr-app',
   components: { RHeader },
 }
 </script>

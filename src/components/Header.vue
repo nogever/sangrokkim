@@ -17,12 +17,15 @@
       c-3.806-1.522-6.395-7.612-5.177-9.287c0.152-0.305,1.827-0.609,4.416-0.609c8.069,0,23.751-0.457,37.911-1.218H319.866
       L319.866,256.258z"/>
     </svg>
+    <r-profile class="profile"></r-profile>
   </header>
 </template>
 
 <script>
+import RProfile from './Profile'
 export default {
-  name: 'r-header',
+  name: 'sr-header',
+  components: { RProfile },
 }
 </script>
 
@@ -36,6 +39,14 @@ header {
     width: 60px;
     height: auto;
     fill: white;
+  }
+  .profile {
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    position: absolute;
+    top: 2px;
+    right: 24px;
   }
 }
 </style>
