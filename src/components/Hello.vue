@@ -40,6 +40,7 @@ export default {
   transition: background 1s ease-in;
   h1 {
     margin: 48px;
+    text-align: center;
   }
 }
 </style>
