@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="header">
     <svg viewBox="160.051 227.168 193.541 74.766">
       <path d="M210.295,278.487c-8.678,7.917-18.575,15.073-27.253,19.031c-5.633,2.741-14.007,4.416-18.423,4.416
       c-0.457,0-1.065-0.457-1.675-0.761c-1.37-0.914-2.588-2.284-2.893-3.502c0-0.457,0.305-1.066,0.761-1.218
@@ -17,36 +17,23 @@
       c-3.806-1.522-6.395-7.612-5.177-9.287c0.152-0.305,1.827-0.609,4.416-0.609c8.069,0,23.751-0.457,37.911-1.218H319.866
       L319.866,256.258z"/>
     </svg>
-    <r-profile class="profile"></r-profile>
   </header>
 </template>
 
 <script>
-import RProfile from './Profile'
 export default {
   name: 'sr-header',
-  components: { RProfile },
 }
 </script>
 
 <style lang="scss" scoped>
-header {
-  position: fixed;
+.header {
   padding: 12px;
-  width: 100%;
-  border-bottom: 6px solid white;
+  background: rgba(142, 206, 233, 1);
   svg {
     width: 60px;
     height: auto;
     fill: white;
-  }
-  .profile {
-    width: 60px;
-    height: 60px;
-    margin: 20px;
-    position: absolute;
-    top: 2px;
-    right: 24px;
   }
 }
 </style>

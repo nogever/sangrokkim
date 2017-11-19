@@ -13,7 +13,6 @@ export default {
 <style lang="scss" scoped>
 div {
   overflow: hidden;
-  border-radius: 50%;
   img {
     width: 100%;
     height: auto;
