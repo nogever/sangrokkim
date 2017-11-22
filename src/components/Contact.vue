@@ -58,6 +58,9 @@ export default {
       font-weight: bold;
       font-size: 24px;
     }
+    &.email {
+      padding: 10%;
+    }
     &:hover:not(.at) {
       cursor: pointer;
       background: radial-gradient(rgba(0, 0, 0, .3) 0%, transparent 60%);
