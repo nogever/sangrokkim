@@ -2,8 +2,12 @@
   <div id="app">
     <sr-header></sr-header>
     <aside class="aside-left"></aside>
-    <aside class="aside-right"></aside>
-    <aside class="aside-bottom"></aside>
+    <aside class="aside-right">
+      <sr-contact></sr-contact>
+    </aside>
+    <aside class="aside-bottom">
+      <div class="links">#</div>
+    </aside>
     <main>
       <router-view></router-view>
     </main>
@@ -12,9 +16,11 @@
 
 <script>
 import SrHeader from './components/Header'
+import SrContact from './components/Contact'
+
 export default {
   name: 'sr-app',
-  components: { SrHeader },
+  components: { SrHeader, SrContact },
 }
 </script>
 
@@ -48,6 +54,16 @@ body {
   }
   .aside-bottom {
     grid-area: 3 / 2 / 4 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .links {
+      color: black;
+      font-weight: bold;
+      font-size: 24px;
+      margin: 10px;
+      padding: 10px;
+    }
   }
   main {
     grid-area: 2 / 2 / 3 / 3;

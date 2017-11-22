@@ -1,17 +1,13 @@
 <template>
   <div class="hello" v-stream:mousemove="mouse$" v-stream:mouseout="mouseout$" v-bind:style="{ background: `hsla(${mouseout ? 198 : coor && coor.x + coor.y}, 67.4%, 73.5%, 1)` }">
-    <h1>creative web developer</h1>
-    <sr-contact></sr-contact>
   </div>
 </template>
 
 <script>
-import SrContact from './Contact'
 import Rx from 'rxjs/Rx'
 
 export default {
   name: 'sr-hello',
-  components: { SrContact },
   subscriptions () {
     this.mouse$ = new Rx.Subject()
     this.mouseout$ = new Rx.Subject()
