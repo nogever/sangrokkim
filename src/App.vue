@@ -41,7 +41,7 @@ body {
 #app {
   display: grid;
   grid-template: 60px auto 60px / 60px auto 60px;
-  grid-gap: 6px;
+  grid-gap: 4px;
   &>* { background: rgba(142, 206, 233, 1); }
   .header {
     grid-area: 1 / 1 / 2 / 3;
