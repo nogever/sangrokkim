@@ -20,7 +20,7 @@ import { initBoardCells, placeSnake, generateFrog } from './init';
 import { keyHandler } from './utils';
 import { animate } from './animation';
 
-function init(element) {
+export function init(element) {
   const container = document.querySelector(element);
   const snake = new Snake();
 
@@ -35,9 +35,15 @@ function init(element) {
     keyHandler(snake, key.which);
   });
 };
-init('.board');
+
 export default {
   name: 'sr-snake',
+  mounted: function() {
+    init('.board');
+  },
+  destroyed: function() {
+    document.removeEventListener('keydown');
+  },
 }
 </script>
 
