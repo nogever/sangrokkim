@@ -31,7 +31,6 @@ export function initSnakeBody() {
 };
 
 export function placeSnake(snake){
-  console.log('hi', snake);
   snake.body.forEach(xy => {
     const cell = document.querySelector(`.cell-${xy}`);
     cell.classList.add('snake');
