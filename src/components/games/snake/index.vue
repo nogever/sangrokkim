@@ -20,29 +20,27 @@ import { initBoardCells, placeSnake, generateFrog } from './init';
 import { keyHandler } from './utils';
 import { animate } from './animation';
 
-export function init(element) {
-  const container = document.querySelector(element);
-  const snake = new Snake();
-
-  initBoardCells(container);
-  placeSnake(snake);
-  generateFrog(snake);
-
-  document.addEventListener('keydown', key => {
-    if (key.which === 32) {
-      animate(snake);
-    }
-    keyHandler(snake, key.which);
-  });
-};
-
 export default {
   name: 'sr-snake',
   mounted: function() {
-    init('.board');
+    const container = document.querySelector('.board');
+    const snake = new Snake();
+
+    initBoardCells(container);
+    placeSnake(snake);
+    generateFrog(snake);
+
+    document.addEventListener('keydown', handleKeydown);
+
+    function handleKeydown(key) {
+      if (key.which === 32) {
+        animate(snake);
+      }
+      keyHandler(snake, key.which);
+    }
   },
   destroyed: function() {
-    document.removeEventListener('keydown');
+    document.removeEventListener('keydown', handleKeydown);
   },
 }
 </script>
