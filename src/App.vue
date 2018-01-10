@@ -62,7 +62,6 @@ body {
       color: black;
       font-weight: bold;
       font-size: 24px;
-      margin: 10px;
       padding: 10px;
     }
   }

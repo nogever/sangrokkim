@@ -1,6 +1,8 @@
 <template>
   <div class="links">
-    <div class="hash">#</div>
+    <div class="hash">
+      <router-link to="/">#</router-link>
+    </div>
     <div class="snake">
       <router-link to="/games/snake">
         <svg viewBox="0 0 36 36">
@@ -20,31 +22,31 @@ export default {
 <style lang="scss" scoped>
 .links {
   display: flex;
+  align-items: center;
   &> div {
     padding: 5%;
-    margin: 10px;
+    margin: 0 10px;
     border-radius: 50%;
     &.hash {
-      text-align: center;
-      color: black;
       font-weight: bold;
       font-size: 24px;
     }
-    &.email {
-      padding: 10%;
-    }
     &:hover:not(.at) {
       cursor: pointer;
-      background: radial-gradient(rgba(0, 0, 0, .3) 0%, transparent 60%);
+      background: radial-gradient(rgba(255, 255, 255, .2) 0%, transparent 60%);
       transform: scale(1.05, 1.05);
     }
   }
   svg {
-    width: 100%;
+    width: 30px;
     height: auto;
   }
   path {
-    fill: white;
+    fill: black;
+  }
+  a {
+    color: black;
+    text-decoration: none;
   }
 }
 </style>
