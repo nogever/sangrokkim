@@ -32,6 +32,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   height: 100%;
   background: hsla(198, 67.4%, 73.5%, 1);
   padding: 100px 6%;

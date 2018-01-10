@@ -6,7 +6,7 @@
       <sr-contact></sr-contact>
     </aside>
     <aside class="aside-bottom">
-      <div class="links">#</div>
+      <sr-links></sr-links>
     </aside>
     <main>
       <router-view></router-view>
@@ -17,10 +17,11 @@
 <script>
 import SrHeader from './components/Header'
 import SrContact from './components/Contact'
+import SrLinks from './components/Links'
 
 export default {
   name: 'sr-app',
-  components: { SrHeader, SrContact },
+  components: { SrHeader, SrContact, SrLinks },
 }
 </script>
 
@@ -61,7 +62,6 @@ body {
       color: black;
       font-weight: bold;
       font-size: 24px;
-      margin: 10px;
       padding: 10px;
     }
   }
