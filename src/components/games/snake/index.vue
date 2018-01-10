@@ -22,25 +22,28 @@ import { animate } from './animation';
 
 export default {
   name: 'sr-snake',
-  mounted: function() {
-    const container = document.querySelector('.board');
-    const snake = new Snake();
-
-    initBoardCells(container);
-    placeSnake(snake);
-    generateFrog(snake);
-
-    document.addEventListener('keydown', handleKeydown);
-
-    function handleKeydown(key) {
+  data: function() {
+    return {
+      snake: new Snake(),
+    };
+  },
+  methods: {
+    handleKeydown: function(key) {
       if (key.which === 32) {
-        animate(snake);
+        animate(this.snake);
       }
-      keyHandler(snake, key.which);
+      keyHandler(this.snake, key.which);
     }
   },
+  mounted: function() {
+    const container = document.querySelector('.board');
+    initBoardCells(container);
+    placeSnake(this.snake);
+    generateFrog(this.snake);
+    document.addEventListener('keydown', this.handleKeydown);
+  },
   destroyed: function() {
-    document.removeEventListener('keydown', handleKeydown);
+    document.removeEventListener('keydown', this.handleKeydown);
   },
 }
 </script>
