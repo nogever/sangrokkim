@@ -1,12 +1,14 @@
 <template>
-  <div id="app">
-    <sr-header></sr-header>
+  <div id="app" v-bind:class="{ home: $route.name == 'hello' }">
+    <aside class="aside-top">
+      <sr-header></sr-header>
+    </aside>
     <aside class="aside-left"></aside>
     <aside class="aside-right">
-      <sr-contact></sr-contact>
+      <sr-links></sr-links>
     </aside>
     <aside class="aside-bottom">
-      <sr-links></sr-links>
+      <sr-contact></sr-contact>
     </aside>
     <main>
       <router-view></router-view>
@@ -41,10 +43,13 @@ body {
 }
 #app {
   display: grid;
-  grid-template: 60px auto 60px / 60px auto 60px;
+  grid-template: 30px auto 30px / 30px auto 30px;
   grid-gap: 4px;
+  &.home {
+    grid-template: 80px auto 80px / 80px auto 80px;
+  }
   &>* { background: rgba(142, 206, 233, 1); }
-  .header {
+  .aside-top {
     grid-area: 1 / 1 / 2 / 3;
   }
   .aside-left {
@@ -55,18 +60,30 @@ body {
   }
   .aside-bottom {
     grid-area: 3 / 2 / 4 / 4;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    .links {
-      color: black;
-      font-weight: bold;
-      font-size: 24px;
-      padding: 10px;
-    }
   }
   main {
     grid-area: 2 / 2 / 3 / 3;
+  }
+  aside {
+    display: flex;
+    > div {
+      display: flex;
+      flex: 1 1 auto;
+    }
+    &.aside-left,
+    &.aside-right {
+      justify-content: center;
+      > div {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    &.aside-bottom,
+    &.aside-top {
+      div {
+        align-items: center;
+      }
+    }
   }
 }
 </style>

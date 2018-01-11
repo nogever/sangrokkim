@@ -21,24 +21,31 @@ export default {
 
 <style lang="scss" scoped>
 .links {
-  display: flex;
-  align-items: center;
   &> div {
-    padding: 5%;
-    margin: 0 10px;
+    padding: 2px;
+    margin: 1px;
     border-radius: 50%;
+    max-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     &.hash {
       font-weight: bold;
       font-size: 24px;
     }
     &:hover:not(.at) {
       cursor: pointer;
-      background: radial-gradient(rgba(255, 255, 255, .2) 0%, transparent 60%);
-      transform: scale(1.05, 1.05);
+      path {
+        fill: white;
+      }
+      a {
+        color: white;
+      }
     }
   }
   svg {
-    width: 30px;
+    width: 100%;
     height: auto;
   }
   path {
