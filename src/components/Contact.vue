@@ -51,13 +51,14 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 12px;
+    margin: 0 12px;
     padding: 2px;
+    max-height: 80%;
     &.at {
       text-align: center;
       color: black;
       font-weight: bold;
-      font-size: 24px;
+      font-size: 20px;
     }
     &:hover:not(.at) {
       cursor: pointer;
