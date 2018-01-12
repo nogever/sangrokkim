@@ -40,7 +40,7 @@ export default {
   }
   100% {
     background-color: rgba(255, 255, 255, 0);
-    top: 90%;
+    top: 100%;
   }
 }
 </style>

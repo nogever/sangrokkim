@@ -40,7 +40,6 @@ export default {
   text-align: center;
   height: 100%;
   background: hsla(198, 67.4%, 73.5%, 1);
-  padding: 100px 6%;
   transition: background 1s ease-in;
   h1 {
     margin: 48px;
@@ -50,7 +49,7 @@ export default {
     position: relative;
     width: 100%;
     height: 100%;
-    margin: -100px -6%;
+    overflow: hidden;
   }
 }
 </style>
