@@ -1,13 +1,13 @@
 <template>
-  <div id="app" v-bind:class="{ home: $route.name == 'hello' }">
-    <aside class="aside-top">
+  <div id="app" v-bind:class="classObject">
+    <aside class="aside-top" v-on:mouseenter="handleHover" v-on:mouseleave="handleHover">
       <sr-header></sr-header>
     </aside>
-    <aside class="aside-left"></aside>
-    <aside class="aside-right">
+    <aside class="aside-left" v-on:mouseenter="handleHover" v-on:mouseleave="handleHover"></aside>
+    <aside class="aside-right" v-on:mouseenter="handleHover" v-on:mouseleave="handleHover">
       <sr-links></sr-links>
     </aside>
-    <aside class="aside-bottom">
+    <aside class="aside-bottom" v-on:mouseenter="handleHover" v-on:mouseleave="handleHover">
       <sr-contact></sr-contact>
     </aside>
     <main>
@@ -24,6 +24,35 @@ import SrLinks from './components/Links'
 export default {
   name: 'sr-app',
   components: { SrHeader, SrContact, SrLinks },
+  data () {
+    return {
+      classObject: {
+        home: this.$route.name == 'hello',
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+      },
+    };
+  },
+  methods: {
+    handleHover: function(e) {
+      if (e.type == 'mouseleave') {
+        this.classObject.top = false;
+        this.classObject.right = false;
+        this.classObject.bottom = false;
+        this.classObject.left = false;
+      } else {
+        this.classObject.top = e.target.className == 'aside-top';
+        this.classObject.right = e.target.className == 'aside-right';
+        this.classObject.bottom = e.target.className == 'aside-bottom';
+        this.classObject.left = e.target.className == 'aside-left';
+      }
+    },
+  },
+  updated: function() {
+    this.classObject.home = this.$route.name == 'hello';
+  }
 }
 </script>
 
@@ -45,6 +74,18 @@ body {
   display: grid;
   grid-template: 30px auto 30px / 30px auto 30px;
   grid-gap: 4px;
+  &.top {
+    grid-template: 80px auto 30px / 30px auto 30px;
+  }
+  &.right {
+    grid-template: 30px auto 30px / 30px auto 80px;
+  }
+  &.left {
+    grid-template: 30px auto 30px / 80px auto 30px;
+  }
+  &.bottom {
+    grid-template: 30px auto 80px / 30px auto 30px;
+  }
   &.home {
     grid-template: 80px auto 80px / 80px auto 80px;
   }
