@@ -1,5 +1,13 @@
 <template>
-  <div class="snow" v-bind:style="{ width: randomWidth + 'px', height: randomWidth + 'px', left: Math.random() * 100 + '%', marginTop: '-' + Math.random() * 100 + 'px', animationDelay: start + 's' }">
+  <div class="snow"
+      v-bind:style="{
+        width: randomWidth + 'px',
+        height: randomWidth + 'px',
+        left: Math.random() * 100 + '%',
+        marginTop: '-' + Math.random() * 100 + 'px',
+        animationDelay: start + 's',
+      }"
+  >
   </div>
 </template>
 
@@ -14,7 +22,7 @@ export default {
   },
   computed: {
     randomWidth: function() {
-      return Math.random() * 10 + this.width;
+      return Math.random() * 20 + this.width;
     },
   }
 }
@@ -36,7 +44,7 @@ export default {
   50% {
   }
   75% {
-    background-color: rgba(255, 255, 255, .6);
+    background-color: rgba(255, 255, 255, .4);
   }
   100% {
     background-color: rgba(255, 255, 255, 0);
